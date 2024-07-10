@@ -30,18 +30,15 @@
     .banner__text h1{
         @apply text-5xl font-semibold mb-10;
     }
-
     /* welcome */
     .welcome {
         @apply py-10
     }
-
     .welcome__wrapper {
         @apply flex flex-col items-center justify-center
         /* desktop */
         lg:flex-row lg:gap-32 lg:max-w-[60rem] lg:mx-auto
     }
-
     .welcome__img img{
         @apply w-72 border-8 border-black rounded-3xl relative
         /* desktop */
@@ -59,7 +56,6 @@
     .welcome__text h4{
         @apply text-primary font-semibold my-5
     }
-
 
     /* what we offer */
     .offer {
@@ -97,39 +93,46 @@
 
     .offer__details.active{
         @apply block;
-    }
+    } 
 
 
 
     /* ABOUT */
     .aboutVid{
-        @apply pt-40 items-center
+        @apply pt-40 items-center pb-10
     }
 
     .aboutVid__wrapper{
-        @apply justify-center items-center flex
+        @apply justify-center items-center flex flex-col
+        lg:flex-row lg:gap-10 lg:items-center
     }
 
     .aboutVid__wrapper iframe{
-        @apply w-[22rem] h-[20rem]
+        @apply w-[24rem] h-[20rem]
+        lg:w-[80rem] lg:h-[30rem] 
     }
 
-    /* serving */
-    .serving{
+    .aboutVid__text{
         @apply py-12
+        lg:w-[65rem] lg:py-40
     }
 
-    .serving__wrapper h2{
+    .aboutVid__text h2{
         @apply font-bold text-5xl text-primary
     }
 
-    .serving__wrapper p{
+    .aboutVid__text p{
         @apply py-5
     }
+
+
+
+
 
     /* slider */
     .aboutSlider{
         @apply py-14
+        lg:py-10
     }
 
     .aboutSlider__title h2{
@@ -151,6 +154,152 @@
     .aboutSlider__card p{
         @apply py-5
     }
+
+    .aboutSlider__card h4{
+        @apply 
+        lg:w-[30rem] lg:mx-auto
+    }
+
+
+    /* our story */
+    .story{
+        @apply py-10
+    }
+    .story__wrapper{
+        @apply flex justify-around
+        lg:flex lg:flex-row lg:items-center lg:py-5
+    }
+    .story h3{
+        @apply font-bold text-center text-4xl mb-5
+    }
+    .story__content{
+        @apply text-justify;
+    }
+    .story__item{
+        @apply mb-5 max-w-[35rem] mx-auto
+    }
+    .story__item h4, 
+    .story__item i{
+        @apply bg-primary text-white px-3 py-2 font-bold
+        flex justify-between items-center cursor-pointer duration-700
+    }
+    .story__item i.open{
+        @apply rotate-180 duration-700
+    }
+    .story__item p{
+        @apply bg-slate-50 h-auto max-h-0 overflow-hidden duration-300
+    }
+    .story__item p.open{
+        @apply max-h-[50rem] bg-slate-50 p-3 duration-300
+    }
+    .story__img img{
+        @apply hidden 
+        lg:rounded-sm lg:block
+    }
+
+    /* MENU */
+    .menuBanner {
+        @apply bg-left bg-cover bg-no-repeat
+    }
+    .menuBanner__text h2{
+        @apply flex  items-center text-3xl
+         text-white font-bold h-screen w-[16rem] mx-auto
+         lg:text-5xl lg:w-[40rem] lg:mx-auto lg:text-center
+    }
+
+
+    /* MENU TAB */
+    .menuFood{
+        @apply py-10 bg-tertiary text-white
+    }
+    .menuFood__wrapper{
+        @apply max-w-[50rem] mx-auto
+    }
+    .menuFood__content{
+        @apply lg:pt-14
+    }
+    .menuFood__tab ul{
+        @apply flex justify-center py-5 bg-secondary rounded-3xl
+    }
+    .menuFood__tab li{
+        @apply text-tertiary font-bold cursor-pointer
+        /* lg:text */
+    }
+    .menuFood__food{
+        @apply flex flex-col gap-4 justify-center items-center
+        text-center py-10 border-transparent
+        lg:py-10 border lg:border-white lg:rounded-lg
+    }
+    .menuFood__food img{
+        @apply h-auto w-[8rem]
+    }
+    .menuFood__details--wrap{
+        @apply grid grid-cols-3 gap-3
+    }
+    .menuFood__details{
+        @apply absolute opacity-0 
+    }
+    .menuFood__details.active{
+        @apply static duration-500 opacity-100 ease-linear delay-200
+    }
+    .menuFood__tab-btn{
+        @apply border-r-white border border-transparent px-3
+        lg:px-12
+    }
+    .menuFood__tab-btn:last-child{
+        @apply border-r-transparent
+    }
+
+    .menuFood__tab-btn.active{
+        @apply text-primary
+    }
+
+
+    /* CONTACT */
+    .contactMap{
+        @apply pt-40 pb-16
+        lg:pb-10
+    }
+    .contactMap__wrapper{
+        @apply mx-auto justify-center flex
+    }
+    .contactMap__wrapper iframe{
+        @apply h-[35rem] 
+        lg:w-[76rem] lg:h-[36rem]
+    }
+
+    .contact{
+        @apply bg-secondary py-20
+    }
+
+    .contact h2{
+        @apply font-bold text-5xl text-center
+    }
+    .contact__wrapper{
+        @apply lg:max-w-[40rem] lg:mx-auto
+    }
+
+    .fullname{
+        @apply flex flex-row gap-4 w-auto 
+    }
+    .contact__input {
+        @apply pt-10 flex flex-col gap-4
+    }
+    .contact__input input{
+        @apply h-[3rem] border-transparent outline-none w-full px-4 rounded-lg
+    }
+
+    .contact__input input:active{
+        @apply text-gray-50
+    }
+    .contact__input textarea{
+        @apply h-[10rem] border-transparent outline-none w-full p-4 rounded-lg max-h-[14rem]
+    }
+
+    .contact__btn{
+        @apply justify-center flex pt-4
+    }
+
 }
 
 @layer components {
@@ -240,7 +389,7 @@
     .connect img{
         @apply hidden
         /* desktop */
-        lg:block 
+        lg:block lg:w-[25rem]
     }
     .connect__details h3{
         @apply font-bold text-2xl;
@@ -293,5 +442,13 @@
     .btn.bg--secondary {
         @apply bg-secondary text-black hover:border
         hover:border-secondary hover:bg-transparent
+    }
+    .btn.bg--contact {
+        @apply bg-primary text-white hover:border font-medium
+        hover:border-secondary hover:bg-white hover:text-primary
+    }
+
+    #active{
+        @apply text-primary
     }
 }

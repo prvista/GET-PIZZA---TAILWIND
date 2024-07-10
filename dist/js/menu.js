@@ -1,5 +1,5 @@
-const tabs = document.querySelectorAll(".offer__img"); //to put an active in all images
-const contents = document.querySelectorAll(".offer__details") //to put an active in all details
+const tabs = document.querySelectorAll(".menuFood__tab-btn"); //to put an active in all images
+const contents = document.querySelectorAll(".menuFood__details") //to put an active in all details
 
 tabs.forEach((tab) =>{
     tab.addEventListener("click", () =>{
@@ -9,7 +9,7 @@ tabs.forEach((tab) =>{
         // $ it is used as its allas and used it to know the string that needs to be imported in JS
         // it is shorthand for the getElementById Method
         removeActiveContent();
-        activeContent.classList.add("active");
+        activeContent.classList.add("active");  
     }); 
 });
 
