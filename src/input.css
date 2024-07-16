@@ -186,6 +186,7 @@
     .story__item i.open{
         @apply rotate-180 duration-700
     }
+
     .story__item p{
         @apply bg-slate-50 h-auto max-h-0 overflow-hidden duration-300
     }
@@ -225,6 +226,7 @@
         @apply text-tertiary font-bold cursor-pointer
         /* lg:text */
     }
+    
     .menuFood__food{
         @apply flex flex-col gap-4 justify-center items-center
         text-center py-10 border-transparent
